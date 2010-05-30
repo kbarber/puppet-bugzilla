@@ -1,0 +1,1 @@
+include bob_bugzilla

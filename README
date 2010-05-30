@@ -1,0 +1,4 @@
+This module is designed to help manage bugzilla and creation of bugzilla
+projects.
+
+See the tests directory for examples on how to use it.
