@@ -107,7 +107,7 @@ define bugzilla::project (
 	# Cron jobs for notifications and statistics
 	cron {"bugzilla-collectstats-${name}":
 		command => "cd /usr/share/bugzilla; ./collectstats.pl",
-		user => "nobody",
+		user => "apache",
 		hour => 0,
 		minute => 5,
 		environment => $envexport,
@@ -115,7 +115,7 @@ define bugzilla::project (
 	}
 	cron {"bugzilla-whineatnews-${name}":
 		command => "cd /usr/share/bugzilla; ./whineatnews.pl",
-		user => "nobody",
+		user => "apache",
 		hour => 0,
 		minute => 55,
 		environment => $envexport,
@@ -123,7 +123,7 @@ define bugzilla::project (
 	}
 	cron {"bugzilla-whine-${name}":
 		command => "cd /usr/share/bugzilla; ./whine.pl",
-		user => "nobody",
+		user => "apache",
 		minute => "*/15",
 		environment => $envexport,
 		require => File[$localconfigfile]
