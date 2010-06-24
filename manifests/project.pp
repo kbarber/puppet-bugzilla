@@ -107,7 +107,7 @@ define bugzilla::project (
 	# Cron jobs for notifications and statistics
 	cron {"bugzilla-collectstats-${name}":
 		command => "cd /usr/share/bugzilla; ./collectstats.pl",
-		user => "apache",
+		user => "root",
 		hour => 0,
 		minute => 5,
 		environment => $envexport,
