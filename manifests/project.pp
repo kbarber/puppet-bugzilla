@@ -114,7 +114,7 @@ define bugzilla::project (
 		require => File[$localconfigfile]
 	}
 	cron {"bugzilla-whineatnews-${name}":
-		command => "cd /usr/share/bugzilla; ./whineatnews.pl",
+		command => "cd /usr/share/bugzilla; ./whineatnews.pl > /dev/null",
 		user => "apache",
 		hour => 0,
 		minute => 55,
